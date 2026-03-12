@@ -88,12 +88,8 @@ Explicación
 
 Los testimonios revelaron pistas importantes:
 
-El asesino tenía una bolsa del gimnasio Get Fit Now
-
-El número de membresía empezaba con 48Z
-
-Era miembro Gold
-
-Escapó en un vehículo con matrícula que contenía H42W
-
-Fue visto en el gimnasio el 9 de enero
+1. El asesino tenía una bolsa del gimnasio Get Fit Now
+2. El número de membresía empezaba con 48Z
+3. Era miembro Gold
+4. Escapó en un vehículo con matrícula que contenía H42W
+5. Fue visto en el gimnasio el 9 de enero
