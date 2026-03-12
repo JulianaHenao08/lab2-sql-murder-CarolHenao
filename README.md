@@ -22,7 +22,7 @@ Posteriormente, al revisar su testimonio, se descubrió que él fue contratado p
  A continuación se documenta paso a paso el proceso seguido para resolver el misterio.
  
 ---
-# Paso 1: Buscar el reporte del crimen
+### Paso 1: Buscar el reporte del crimen
 
 ```sql
 SELECT *
