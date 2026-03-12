@@ -36,9 +36,8 @@ Explicación
 Se buscó el reporte del crimen ocurrido el 15 de enero de 2018 en SQL City.
 El reporte indicó que existían dos testigos clave:
 
-Uno vive en la última casa de Northwestern Dr
-
-Otro se llama Annabel y vive en Franklin Ave
+- Uno vive en la última casa de Northwestern Dr
+- Otro se llama Annabel y vive en Franklin Ave
 
 ![Reporte del crimen](evidencia/Paso1.png)
 
@@ -110,6 +109,7 @@ Sospechosos encontrados:
 
 - Joe Germuska
 - Jeremy Bowers
+  
 ![Miembros del gym](evidencia/paso5.png)
 
 ---
@@ -150,6 +150,7 @@ Explicación
 Se buscó el vehículo cuya placa coincidiera con H42W.
 
 El resultado coincidió con la licencia de *Jeremy Bowers*.
+
 ![Miembros del gym](evidencia/paso8.png)
 
 ---
@@ -167,3 +168,85 @@ Se confirmó que Jeremy Bowers fue quien cometió el asesinato.
 Sin embargo, su entrevista reveló que fue contratado por otra persona.
 
 ![Miembros del gym](evidencia/paso9.png)
+
+---
+### Paso 10: Buscar a quien lo contrató
+Según Jeremy, la persona que lo contrató tenía las siguientes características:
+
+- Mujer
+- Pelirroja
+- Altura entre 65 y 67
+- Conduce Tesla Model S
+  
+```sql
+SELECT *
+FROM drivers_license
+WHERE hair_color = 'red'
+AND gender = 'female'
+AND car_make = 'Tesla'
+AND car_model = 'Model S'
+AND height BETWEEN 65 AND 67;
+```
+
+![Miembros del gym](evidencia/paso10.png)
+
+---
+### Paso 11: Identificar a las personas
+```sql
+SELECT *
+FROM person
+WHERE license_id IN (202298, 291182, 918773);
+
+```
+
+Explicación
+
+Se identificaron las personas asociadas a las licencias encontradas en el paso anterior.
+
+![Miembros del gym](evidencia/paso11.png)
+
+---
+### Paso 12: Confirmar asistencia al concierto
+Jeremy mencionó que la persona asistió 3 veces al concierto SQL Symphony en diciembre de 2017.
+
+```sql
+SELECT person_id, COUNT(*)
+FROM facebook_event_checkin
+WHERE event_name = 'SQL Symphony Concert'
+AND date LIKE '201712%'
+GROUP BY person_id
+HAVING COUNT(*) = 3;
+```
+
+Explicación
+
+Se identificaron las personas que asistieron exactamente 3 veces al evento.
+
+Esto permitió identificar a la verdadera culpable.
+
+![Miembros del gym](evidencia/paso13.png)
+
+---
+## Paso Final: Resolver el caso
+```sql
+--Consulta final para terminar el juego
+INSERT INTO solution VALUES (1, 'Miranda Priestly');
+SELECT value FROM solution;
+```
+
+Se confirmó que Miranda Priestly fue la persona que contrató al asesino.
+
+![Miembros del gym](evidencia/paso14.png)
+
+---
+### Conclusión
+
+Mediante el uso de consultas SQL y el análisis de múltiples tablas de la base de datos, fue posible reconstruir los eventos del asesinato ocurrido en SQL City.
+
+La investigación permitió identificar primero al asesino directo Jeremy Bowers, y posteriormente descubrir al verdadero cerebro detrás del crimen:
+
+#### Miranda Priestly
+
+El caso ha sido resuelto satisfactoriamente.
+
+
