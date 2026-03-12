@@ -1,1 +1,2 @@
-# lab2-sql-murder-CarolHenao
+# SQL Murder Mystery – Reporte de Investigación
+h3 Detective: Carol Juliana Henao
