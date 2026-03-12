@@ -4,6 +4,8 @@
 **Actividad:** SQL Murder Mystery  
 **Nombre:** Carol Juliana Henao  
 
+---
+
 ## Resumen del Caso
 
 El asesinato ocurrido el 15 de enero de 2018 en SQL City fue investigado utilizando consultas SQL sobre diferentes tablas de la base de datos.
@@ -29,4 +31,11 @@ WHERE date = 20180115
 AND type = 'murder'
 AND city = 'SQL City';
 ```
+Explicación
 
+Se buscó el reporte del crimen ocurrido el 15 de enero de 2018 en SQL City.
+El reporte indicó que existían dos testigos clave:
+
+Uno vive en la última casa de Northwestern Dr
+
+Otro se llama Annabel y vive en Franklin Ave
