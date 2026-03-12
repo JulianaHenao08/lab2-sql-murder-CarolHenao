@@ -1,9 +1,9 @@
 # SQL Murder Mystery – Reporte de Investigación
 ## Detective: Carol Juliana Henao
 
-##Resumen del Caso
+## Resumen del Caso
 
-### El asesinato ocurrido el 15 de enero de 2018 en SQL City fue investigado utilizando consultas SQL sobre diferentes tablas de la base de datos.
+El asesinato ocurrido el 15 de enero de 2018 en SQL City fue investigado utilizando consultas SQL sobre diferentes tablas de la base de datos.
 
 La investigación permitió identificar primero al asesino Jeremy Bowers, quien fue visto huyendo del lugar del crimen y coincidía con las pistas proporcionadas por los testigos.
 
