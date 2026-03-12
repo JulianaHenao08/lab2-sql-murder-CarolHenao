@@ -37,12 +37,13 @@ Se buscó el reporte del crimen ocurrido el 15 de enero de 2018 en SQL City.
 El reporte indicó que existían dos testigos clave:
 
 Uno vive en la última casa de Northwestern Dr
+
 Otro se llama Annabel y vive en Franklin Ave
 
 ![Reporte del crimen](evidencia/Paso1.png)
 
 ---
-###Paso 2: Encontrar al primer testigo
+### Paso 2: Encontrar al primer testigo
 ```sql
 SELECT *
 FROM person
@@ -53,4 +54,46 @@ LIMIT 1;
 Explicación
 
 Se buscó la última casa de Northwestern Dr ordenando los números de dirección de mayor a menor.
+
 Resultado: Morty Schapiro
+
+---
+### Paso 3: Encontrar al segundo testigo
+```sql
+SELECT *
+FROM person
+WHERE name LIKE 'Annabel%'
+AND address_street_name = 'Franklin Ave';
+```
+Explicación
+
+Se buscó una persona llamada Annabel que viviera en Franklin Ave.
+
+Resultado: Annabel Miller
+
+---
+### Paso 4: Revisar las entrevistas de los testigos
+```sql
+SELECT *
+FROM interview
+WHERE person_id = 14887;
+```
+
+```sql
+SELECT *
+FROM interview
+WHERE person_id = 16371;
+```
+Explicación
+
+Los testimonios revelaron pistas importantes:
+
+El asesino tenía una bolsa del gimnasio Get Fit Now
+
+El número de membresía empezaba con 48Z
+
+Era miembro Gold
+
+Escapó en un vehículo con matrícula que contenía H42W
+
+Fue visto en el gimnasio el 9 de enero
