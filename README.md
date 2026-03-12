@@ -93,3 +93,77 @@ Los testimonios revelaron pistas importantes:
 3. Era miembro Gold
 4. Escapó en un vehículo con matrícula que contenía H42W
 5. Fue visto en el gimnasio el 9 de enero
+
+---
+### Paso 5: Buscar miembros del gimnasio
+```sql
+SELECT *
+FROM get_fit_now_member
+WHERE id LIKE '48Z%'
+AND membership_status = 'gold';
+```
+Explicación
+
+Se buscaron los miembros del gimnasio cuyo ID comenzara con 48Z y que tuvieran membresía Gold.
+
+Sospechosos encontrados:
+
+- Joe Germuska
+- Jeremy Bowers
+![Miembros del gym](evidencia/paso5.png)
+
+---
+### Paso 6: Ver quién fue al gimnasio el 9 de enero
+```sql
+SELECT *
+FROM get_fit_now_check_in
+WHERE check_in_date = 20180109;
+```
+Explicación
+
+Se verificó qué miembros asistieron al gimnasio el 9 de enero, coincidiendo con la pista dada por el testigo.
+
+---
+### Paso 7: Revisar información de los sospechosos
+
+```sql
+SELECT *
+FROM person
+WHERE id = 28819 OR id = 67318;
+```
+
+Explicación
+
+Se obtuvieron los datos personales y license_id de los dos sospechosos identificados.
+
+![Miembros del gym](evidencia/paso7.png)
+
+---
+### Paso 8: Buscar coincidencias con la matrícula
+```sql
+SELECT *
+FROM drivers_license
+WHERE plate_number LIKE '%H42W%';
+```
+Explicación
+
+Se buscó el vehículo cuya placa coincidiera con H42W.
+
+El resultado coincidió con la licencia de *Jeremy Bowers*.
+![Miembros del gym](evidencia/paso8.png)
+
+---
+### Paso 9: Confirmar al asesino
+
+```sql
+INSERT INTO solution VALUES (1, 'Jeremy Bowers');
+SELECT value FROM solution;
+```
+
+Explicación
+
+Se confirmó que Jeremy Bowers fue quien cometió el asesinato.
+
+Sin embargo, su entrevista reveló que fue contratado por otra persona.
+
+![Miembros del gym](evidencia/paso9.png)
