@@ -1,5 +1,8 @@
 # SQL Murder Mystery – Reporte de Investigación
-## Detective: Carol Juliana Henao
+## Datos del Detective
+
+**Actividad:** SQL Murder Mystery  
+**Nombre:** Carol Juliana Henao  
 
 ## Resumen del Caso
 
@@ -9,4 +12,21 @@ La investigación permitió identificar primero al asesino Jeremy Bowers, quien 
 
 Posteriormente, al revisar su testimonio, se descubrió que él fue contratado por otra persona para cometer el crimen. Analizando las características descritas (mujer pelirroja, conductora de Tesla Model S y asistente frecuente a conciertos de SQL Symphony), se identificó a la verdadera culpable:
 
- Miranda Priestly
+ **Miranda Priestly**
+
+---
+
+ ## Bitácora de Investigación
+ A continuación se documenta paso a paso el proceso seguido para resolver el misterio.
+ 
+---
+# Paso 1: Buscar el reporte del crimen
+
+```sql
+SELECT *
+FROM crime_scene_report
+WHERE date = 20180115
+AND type = 'murder'
+AND city = 'SQL City';
+```
+
