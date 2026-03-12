@@ -39,3 +39,5 @@ El reporte indicó que existían dos testigos clave:
 Uno vive en la última casa de Northwestern Dr
 
 Otro se llama Annabel y vive en Franklin Ave
+
+![Reporte del crimen](evidencia/paso1.png)
