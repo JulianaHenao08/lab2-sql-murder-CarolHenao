@@ -37,7 +37,20 @@ Se buscó el reporte del crimen ocurrido el 15 de enero de 2018 en SQL City.
 El reporte indicó que existían dos testigos clave:
 
 Uno vive en la última casa de Northwestern Dr
-
 Otro se llama Annabel y vive en Franklin Ave
 
 ![Reporte del crimen](evidencia/Paso1.png)
+
+---
+###Paso 2: Encontrar al primer testigo
+```sql
+SELECT *
+FROM person
+WHERE address_street_name = 'Northwestern Dr'
+ORDER BY address_number DESC
+LIMIT 1;
+```
+Explicación
+
+Se buscó la última casa de Northwestern Dr ordenando los números de dirección de mayor a menor.
+Resultado: Morty Schapiro
