@@ -40,4 +40,4 @@ Uno vive en la última casa de Northwestern Dr
 
 Otro se llama Annabel y vive en Franklin Ave
 
-![Reporte del crimen](evidencia/paso1.png)
+![Reporte del crimen](evidencia/Paso1.png)
